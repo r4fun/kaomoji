@@ -1,3 +1,5 @@
+# src: http://kaomoji.ru/en
+
 library(rvest)
 
 url <- "http://kaomoji.ru/en/"
@@ -28,6 +30,7 @@ special_kaomojis <- list(Special = setNames(
 ))
 
 
-kaomojis <- c(normal_kaomojis, special_kaomojis)
+kaomoji2 <- c(normal_kaomojis, special_kaomojis)
+kaomoji2 <- structure(kaomoji2, class = c("kaomoji_set", class(kaomoji1)))
 
-usethis::use_data(kaomojis, internal = F, overwrite = T)
+usethis::use_data(kaomoji2, overwrite = TRUE)
